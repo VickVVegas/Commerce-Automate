@@ -1,6 +1,7 @@
 {
-  "id": "commerce-automate",
+  "id": "Commerce-Automate",
   "title": "Commerce-Automate",
+"type": "module",
   "description": "Sistema de interação com NPCs: diálogos condicionais, loja com compra e venda, segredos por jogador, editor visual e integração com compêndios.",
   "version": "1.0.0",
   "compatibility": {
