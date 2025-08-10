@@ -4,7 +4,7 @@ import { DialogueEditorApp } from "./apps/DialogueEditorApp.js";
 import { ensureNPCFlags } from "./utils/flags.js";
 import { registerHandlebarsHelpers } from "./utils/handlebars.js";
 
-export const MODULE_ID = "kult-npc-automation";
+export const MODULE_ID = "Commerce-Automate";
 
 Hooks.once("init", () => {
   console.log(`${MODULE_ID} | init v13`);
