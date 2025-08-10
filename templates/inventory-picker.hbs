@@ -1,0 +1,29 @@
+<div>
+  <p>Moedas do vendedor: {{npcCurrency}} | Taxa de compra: {{sellRate}}</p>
+  <table class="kult-table">
+    <thead>
+      <tr><th>Item</th><th>Tipo</th><th>Qtd</th><th>Preço base</th><th
+        >Vender</th></tr>
+    </thead>
+    <tbody>
+      {{#each items as |it|}}
+        <tr data-id="{{it.id}}">
+          <td>{{it.name}}</td>
+          <td>{{it.type}}</td>
+          <td>{{it.qty}}</td>
+          <td>{{it.price}}</td>
+          <td>
+            <input
+              name="qty"
+              type="number"
+              min="1"
+              max="{{it.qty}}"
+              value="1"
+            />
+            <button data-action="sell-item">Vender</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

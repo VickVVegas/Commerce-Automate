@@ -1,0 +1,60 @@
+<div class="kult-header">
+  <div class="kult-title">
+    <h2>{{actorName}}</h2>
+    <small class="muted">{{tokenName}}</small>
+  </div>
+
+  <nav class="kult-tabs">
+    <a data-tab="dialogue" class="{{#if (eq activeTab "dialogue")}}active{{/if}}">Diálogo</a>
+    <a data-tab="shop" class="{{#if (eq activeTab "shop")}}active{{/if}}">Loja</a>
+    {{#if isGM}}<a data-action="open-editor" class="gm" title="Editor de Diálogo">⚙ Editor</a>{{/if}}
+  </nav>
+</div>
+
+{{#if (eq activeTab "dialogue")}}
+  {{#if dialogue.node}}
+    <div class="kult-dialogue">
+      <div class="speech">{{dialogue.node.text}}</div>
+      <ul class="options">
+        {{#each dialogue.node.options as |opt|}}
+          <li><button data-action="choose-option" data-next="{{opt.next}}">{{opt.label}}</button></li>
+        {{/each}}
+      </ul>
+    </div>
+  {{else}}
+    <p class="muted">Sem diálogo ativo. Abra o Editor (⚙) para configurar.</p>
+  {{/if}}
+{{/if}}
+
+{{#if (eq activeTab "shop")}}
+  <div class="kult-shop">
+    <div class="money">
+      <span>Você: {{money.playerCurrency}} | Vendedor: {{money.npcCurrency}}</span>
+    </div>
+
+    <section>
+      <h3>Estoque</h3>
+      <ul class="inventory">
+        {{#each shop.inventory as |it|}}
+          <li data-id="{{it.id}}">
+            <div class="name">{{it.name}}</div>
+            <div class="price">Preço: {{it.priceView}}</div>
+            <div class="qty">
+              <label>Qtd:</label>
+              <input type="number" min="1" max="{{it.qty}}" name="qty" value="1"/>
+              <small>(em estoque: {{it.qty}})</small>
+            </div>
+            <div class="actions">
+              <button data-action="buy">Comprar</button>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+
+    <section class="sell">
+      <h3>Vender ao vendedor</h3>
+      <button data-action="sell-open">Selecionar do meu inventário…</button>
+    </section>
+  </div>
+{{/if}}

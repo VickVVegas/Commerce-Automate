@@ -1,0 +1,173 @@
+.kult-theme {
+  --kult-bg: #0b0b0c;
+  --kult-panel: #121214;
+  --kult-border: #2a2a2e;
+  --kult-accent: #b01221;
+  --kult-text: #e9e9ea;
+  --kult-muted: #9a9aa1;
+}
+
+.kult-app {
+  background: var(--kult-bg);
+  color: var(--kult-text);
+}
+.kult-app .window-content {
+  background: var(--kult-panel);
+}
+
+.kult-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.kult-title h2 {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+.muted {
+  color: var(--kult-muted);
+}
+
+.kult-tabs a {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.kult-tabs a.active {
+  background: var(--kult-accent);
+  color: white;
+}
+.kult-tabs a.gm {
+  opacity: 0.85;
+}
+
+.kult-dialogue .speech {
+  padding: 12px;
+  background: #0f0f12;
+  border: 1px solid var(--kult-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.kult-dialogue .options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.kult-dialogue .options li {
+  margin: 6px 0;
+}
+.kult-dialogue .options button {
+  background: transparent;
+  border: 1px solid var(--kult-border);
+  color: var(--kult-text);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.kult-dialogue .options button:hover {
+  border-color: var(--kult-accent);
+  color: #fff;
+}
+
+.kult-shop .money {
+  margin: 6px 0 10px;
+}
+.kult-shop .inventory {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.kult-shop .inventory li {
+  display: grid;
+  grid-template-columns: 1.2fr 0.6fr 0.9fr 0.6fr;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--kult-border);
+  border-radius: 10px;
+  background: #0f0f12;
+}
+.kult-shop .inventory .name {
+  font-weight: 600;
+}
+.kult-shop .inventory .price {
+  color: var(--kult-muted);
+}
+.kult-shop .inventory .qty input {
+  width: 64px;
+}
+.kult-shop .inventory .actions button {
+  background: var(--kult-accent);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.kult-shop h3 {
+  margin: 12px 0 6px;
+}
+
+.kult-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.kult-table th,
+.kult-table td {
+  border: 1px solid var(--kult-border);
+  padding: 6px;
+}
+.kult-table th {
+  background: #0f0f12;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 10px;
+  height: 100%;
+}
+.editor-grid .nodes {
+  border-right: 1px solid var(--kult-border);
+  padding-right: 8px;
+}
+.editor-grid .nodes .toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.editor-grid .nodes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: calc(100% - 90px);
+  overflow: auto;
+}
+.editor-grid .nodes li a {
+  display: block;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.editor-grid .nodes li a.active,
+.editor-grid .nodes li a:hover {
+  background: #0f0f12;
+  border: 1px solid var(--kult-border);
+}
+.node-editor textarea {
+  width: 100%;
+}
+.options {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+}
+.options th,
+.options td {
+  border: 1px solid var(--kult-border);
+  padding: 6px;
+  vertical-align: top;
+}

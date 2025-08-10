@@ -1,0 +1,54 @@
+<div class="editor-grid">
+  <aside class="nodes">
+    <div class="toolbar">
+      <label>Início:</label>
+      <select name="startNode">
+        {{#each nodes as |n|}}
+          <option value="{{n.id}}" {{#if (eq ../dialogue.startNode n.id)}}selected{{/if}}>{{n.id}}</option>
+        {{/each}}
+      </select>
+      <button data-action="add-node">+ Nó</button>
+      <button data-action="remove-node">- Nó</button>
+    </div>
+    <ul>
+      {{#each nodes as |n|}}
+        <li>
+          <a data-action="select-node" data-id="{{n.id}}" class="{{#if (eq ../current.id n.id)}}active{{/if}}">{{n.id}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </aside>
+
+  <section class="node-editor">
+    {{#if current}}
+      <h3>Nó: {{current.id}}</h3>
+      <label>Texto</label>
+      <textarea name="nodeText" rows="6">{{current.text}}</textarea>
+      <div class="row">
+        <button data-action="save-node">Salvar Texto</button>
+      </div>
+
+      <h4>Opções</h4>
+      <table class="options">
+        <thead><tr><th>Label</th><th>Next</th><th>Visível p/ (IDs, separados por vírgula)</th><th>Condições (JSON)</th><th>Ações</th></tr></thead>
+        <tbody>
+          {{#each current.options as |opt i|}}
+          <tr data-option-row>
+            <td><input type="text" name="optLabel" value="{{opt.label}}"/></td>
+            <td><input type="text" name="optNext" value="{{opt.next}}"/></td>
+            <td><input type="text" name="optVisible" value="{{opt.visibleForUsers}}"/></td>
+            <td><textarea name="optCond" rows="3">{{json opt.conditions}}</textarea></td>
+            <td>
+              <button data-action="save-option" data-index="{{i}}">Salvar</button>
+              <button data-action="remove-option" data-index="{{i}}">Remover</button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <button data-action="add-option">+ Opção</button>
+    {{else}}
+      <p class="muted">Selecione ou crie um nó.</p>
+    {{/if}}
+  </section>
+</div>
