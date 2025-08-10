@@ -1,22 +1,29 @@
 {
-  "id": "Commerce-Automate",
+  "id": "commerce-automate",
   "title": "Commerce-Automate",
-  "description": "Clique em NPCs para diálogo e comércio com condições, segredos por jogador, compêndios e editor visual.",
+  "description": "Sistema de interação com NPCs: diálogos condicionais, loja com compra e venda, segredos por jogador, editor visual e integração com compêndios.",
   "version": "1.0.0",
   "compatibility": {
     "minimum": "13",
     "verified": "13",
     "maximum": "13"
   },
-  "authors": [{ "name": "Vick" }],
+  "authors": [
+    {
+      "name": "VickVVegas"
+    }
+  ],
   "esmodules": ["scripts/main.js"],
   "styles": ["styles/npc-app.css"],
   "languages": [
-    { "lang": "pt-BR", "name": "Português (Brasil)", "path": "lang/pt-BR.json" }
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
   ],
-  "packs": [],
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "license": "LICENSE"
+  "url": "https://github.com/VickVVegas/Commerce-Automate",
+  "manifest": "https://raw.githubusercontent.com/VickVVegas/Commerce-Automate/main/module.json",
+  "download": "https://github.com/user-attachments/files/21705481/Commerce-Automate-main.zip",
+  "license": "MIT"
 }
